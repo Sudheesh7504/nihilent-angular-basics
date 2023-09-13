@@ -7,6 +7,9 @@ import { Task1Component } from './task1/task1.component';
 import { Task2Component } from './task2/task2.component';
 import { CounterComponent } from './counter/counter.component';
 import { FormsComponent } from './forms/forms.component';
+import { FormsModule } from '@angular/forms';
+import { BoxComponent } from './box/box.component';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { FormsComponent } from './forms/forms.component';
     Task1Component,
     Task2Component,
     CounterComponent,
-    FormsComponent
+    FormsComponent,
+    BoxComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

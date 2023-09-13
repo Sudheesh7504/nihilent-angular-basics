@@ -76,7 +76,9 @@ movies=[{
              is the creative producer for the film. The film stars Pradeep Ranganathan himself 
             (in his acting debut) and Ivana (in her first lead role).`
 }
-]
+];
+
+
 
 
 }
