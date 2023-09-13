@@ -1,0 +1,9 @@
+<section class="countlikes">
+  <div class="counter">
+    <button (click)="increment()">Likes👍{{ like }}</button>
+    <button (click)="Decrement()">Dislikes👎{{ dislike }}</button><br />
+    <input type="range" min="0" [max]="total" [value]="like" />
+
+    <h1 *ngIf="msg">You are awesome</h1>
+  </div>
+</section>

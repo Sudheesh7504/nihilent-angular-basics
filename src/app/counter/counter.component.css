@@ -1,0 +1,19 @@
+body {
+  display: grid;
+  place-content: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.countlikes {
+  place-content: center;
+
+  gap: 20px;
+  place-content: center;
+  text-align: center;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-evenly;
+}
