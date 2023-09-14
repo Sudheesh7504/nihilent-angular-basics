@@ -57,13 +57,47 @@
   ></app-task2>
 </section> -->
 
+<div class="input">
+  <input
+    type="text"
+    [(ngModel)]="newMovie.src"
+    placeholder="movieimage"
+    required
+  />
+
+  <input
+    type="text"
+    [(ngModel)]="newMovie.name"
+    placeholder="moviename"
+    required
+  />
+
+  <input
+    type="text"
+    [(ngModel)]="newMovie.rating"
+    placeholder="movierating"
+    required
+  />
+
+  <input
+    type="text"
+    [(ngModel)]="newMovie.plot"
+    placeholder="movieplot"
+    required
+  />
+
+  <button (click)="addMovie()">Add Movie</button><br />
+</div>
+
 <div class="component">
   <app-task2
-    *ngFor="let mv of movies"
+    *ngFor="let mv of movies; let i = index"
     [src]="mv.src"
     [name]="mv.name"
     [rating]="mv.rating"
     [plot]="mv.plot"
+    [idx]="i"
+    (MrmIdx)="delete($event)"
   >
   </app-task2>
 </div>

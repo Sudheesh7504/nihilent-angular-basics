@@ -5,3 +5,9 @@
   flex-wrap: wrap;
   overflow: hidden;
 }
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}

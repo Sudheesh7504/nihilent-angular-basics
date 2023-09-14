@@ -78,7 +78,31 @@ movies=[{
 }
 ];
 
-
-
+newMovie={
+  src:'',
+  name:'',
+  rating:'',
+  plot:''
 
 }
+
+addMovie(){
+// const movie={
+//   src:this.newMovie.src,
+//   name:this.newMovie.name,
+//   rating:this.newMovie.rating,
+//   plot:this.newMovie.plot
+this.movies.push(this.newMovie);
+
+}
+// this.movies.push(movie);
+
+delete(idx:number){
+  this.movies.splice(idx,1);
+}
+
+}
+
+
+
+
