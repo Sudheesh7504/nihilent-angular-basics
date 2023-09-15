@@ -15,9 +15,9 @@ export class AddMovieFormComponent {
   summary: string = '';
   movies;
 
-
-  constructor(movieServie: MovieService) {
-    this.movies = movieServie.movies;
+  //DI-dependency Injection
+  constructor(private movieServie: MovieService) {
+    this.movies = movieServie.getMovies();
   }
 
 
@@ -29,7 +29,7 @@ export class AddMovieFormComponent {
       rating: this.rating,
       summary: this.summary,
     };
-    this.movies.push(newMovie);
+    this.movieServie.setMovies(newMovie);
 
   }
 }

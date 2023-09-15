@@ -9,11 +9,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component';
 
 const routes: Routes = [
-  {path:'',component:WelcomeComponent,pathMatch:'full'},
-  {path:'forms',component:FormsComponent},
-  {path:'add-movie-form',component:AddMovieFormComponent},
-  {path:'movies',component:MoviesListComponent}
-  
+  { path: 'home', component: WelcomeComponent, pathMatch: 'full' },
+  { path: 'forms', component: FormsComponent },
+  { path: 'add-movie-form', component: AddMovieFormComponent },
+  { path: 'movies', component: MoviesListComponent }
+
 ];
 
 @NgModule({
@@ -21,7 +21,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  
-  
-  
- }
+
+
+
+}

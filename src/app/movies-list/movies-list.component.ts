@@ -12,8 +12,8 @@ export class MoviesListComponent {
   // @Input() movies: Movie[] = [];
 
   movies;
-  constructor(movieService: MovieService) {
-    this.movies = movieService.movies;
+  constructor(private movieService: MovieService) {
+    this.movies = movieService.getMovies();
   }
   //   sudeesh={
   //     src:"https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?q=10&h=200",

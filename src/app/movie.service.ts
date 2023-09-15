@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './app.component';
+
+//singleton
 @Injectable({
   providedIn: 'root'
 })
@@ -30,4 +32,16 @@ export class MovieService {
   ];
 
   constructor() { }
+
+  //encapsulation
+  getMovies() {
+    return this.movies;
+  }
+
+  setMovies(newMovie: Movie) {
+    this.movies.push(newMovie);
+
+  }
+
+
 }
