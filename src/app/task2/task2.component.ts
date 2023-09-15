@@ -1,4 +1,5 @@
-import { Component,EventEmitter,Input ,Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Movie } from '../app.component'
 
 @Component({
   selector: 'app-task2',
@@ -6,14 +7,21 @@ import { Component,EventEmitter,Input ,Output} from '@angular/core';
   styleUrls: ['./task2.component.css']
 })
 export class Task2Component {
-@Input() src="";
-@Input() name="";
-@Input() rating="";
-@Input() plot="";
-@Input() idx:number=0;
-@Output() MrmIdx=new EventEmitter<number>();
+  @Input() movie: Movie = {
+    src: '',
+    name: "vikram",
+    rating: 8.4,
+    summary: "fcgjjgg"
 
-delete(){
-  this.MrmIdx.emit(this.idx);
-}
+  };
+
+  @Input() idx: number = 0;
+  @Output() MrmIdx = new EventEmitter<number>();
+
+  delete() {
+    this.MrmIdx.emit(this.idx);
+  }
+
+
+
 }

@@ -1,9 +1,36 @@
 <section class="countlikes">
   <div class="counter">
-    <button (click)="increment()">Likes👍{{ like }}</button>
-    <button (click)="Decrement()">Dislikes👎{{ dislike }}</button><br />
-    <input type="range" min="0" [max]="total" [value]="like" />
+    <!-- <button
+      mat-raised-button
+      color="primary"
+      (click)="increment()"
+      matBadge="{{ like }}"
+      matBadgePosition="before"
+      matBadgeColor="accent"
+    >
+      👍
+    </button> -->
 
-    <h1 *ngIf="msg">You are awesome</h1>
+    <mat-icon matBadge="{{ like }}" matBadgeColor="warn"
+      ><button class="like-btn" (click)="increment()">👍</button></mat-icon
+    >
+    <!-- <button (click)="Decrement()">Dislikes👎{{ dislike }}</button><br /> -->
+    <!-- <button
+      mat-raised-button
+      color="primary"
+      (click)="Decrement()"
+      matBadge="{{ dislike }}"
+      matBadgePosition="before"
+      matBadgeColor="accent"
+    >
+      👎
+    </button> -->
+
+    <mat-icon matBadge="{{ dislike }}" matBadgeColor="warn"
+      ><button class="dislike-btn" (click)="Decrement()">👎</button></mat-icon
+    >
+    <!-- <input type="range" min="0" [max]="total" [value]="like" />
+
+    <h1 *ngIf="msg">You are awesome</h1> -->
   </div>
 </section>

@@ -8,7 +8,7 @@ import { Component,Input } from '@angular/core';
 export class Task1Component {
 
  
-  @Input() src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?q=10&h=200"
-  @Input() name="sudeesh"
+  // @Input() src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?q=10&h=200"
+  // @Input() name="sudeesh"
   
 }

@@ -1,10 +1,10 @@
-.component {
+.movie-list-container {
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 10px;
   flex-wrap: wrap;
   overflow: hidden;
-  padding: 10px;
 }
 
 /* .input {

@@ -11,6 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { BoxComponent } from './box/box.component';
 import { MovieComponent } from './movie/movie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MoviesListComponent } from './movies-list/movies-list.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,13 +29,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CounterComponent,
     FormsComponent,
     BoxComponent,
-    MovieComponent
+    MovieComponent,
+    MoviesListComponent,
+    WelcomeComponent,
+    AddMovieFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, MatBadgeModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

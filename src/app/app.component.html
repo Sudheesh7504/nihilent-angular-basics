@@ -56,52 +56,100 @@
             (in his acting debut) and Ivana (in her first lead role)."
   ></app-task2>
 </section> -->
-
-<div class="input">
-  <input
+<!-- 
+<div class="input"> -->
+<!-- <input
+    matInput
     type="text"
     [(ngModel)]="newMovie.src"
     placeholder="movieimage"
     required
-  />
+  /> -->
 
-  <input
+<!-- <mat-form-field>
+    <mat-label>MoviePoster</mat-label>
+    <input matInput [(ngModel)]="newMovie.src" placeholder="movieimage" />
+  </mat-form-field> -->
+
+<!-- <input
+    matInput
     type="text"
     [(ngModel)]="newMovie.name"
     placeholder="moviename"
     required
-  />
+  /> -->
 
-  <input
+<!-- <mat-form-field>
+    <mat-label>MovieName</mat-label>
+    <input matInput [(ngModel)]="newMovie.name" placeholder="MOvieName" />
+  </mat-form-field> -->
+
+<!-- <input
+    matInput
     type="text"
     [(ngModel)]="newMovie.rating"
     placeholder="movierating"
     required
-  />
+  /> -->
 
-  <input
+<!-- <mat-form-field>
+    <mat-label>MovieRating</mat-label>
+    <input matInput [(ngModel)]="newMovie.rating" placeholder="movierating" />
+  </mat-form-field> -->
+
+<!-- <input
+    matInput
     type="text"
     [(ngModel)]="newMovie.plot"
     placeholder="movieplot"
     required
-  />
+  /> -->
 
-  <button (click)="addMovie()">Add Movie</button><br />
-</div>
+<!-- <mat-form-field>
+    <mat-label>MoviePlot</mat-label>
+    <input matInput [(ngModel)]="newMovie.plot" placeholder="movieplot" />
+  </mat-form-field> -->
 
-<div class="component">
+<!-- <mat-form-field>
+    <mat-label>Write a summary about movie</mat-label>
+    <textarea matInput placeholder="Write a summary about movie"></textarea>
+  </mat-form-field> -->
+
+<!-- <button (click)="addMovie()">Add Movie</button><br /> -->
+<!-- <button mat-raised-button (click)="addMovie()" color="primary">
+    Add Movie
+  </button>
+</div> -->
+
+<!-- <div class="component">
   <app-task2
     *ngFor="let mv of movies; let i = index"
     [src]="mv.src"
     [name]="mv.name"
     [rating]="mv.rating"
-    [plot]="mv.plot"
+    [summary]="mv.summary"
     [idx]="i"
     (MrmIdx)="delete($event)"
   >
   </app-task2>
-</div>
+</div> -->
 
 <!-- <app-counter> </app-counter> -->
 <!-- 
 <app-forms></app-forms> -->
+
+<header>
+  <h1>Welcome to movie App</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Welcome</a></li>
+      <li><a routerLink="/forms">Forms</a></li>
+      <li><a routerLink="/add-movie-form">AddMovie</a></li>
+      <li><a routerLink="/movies">Movies</a></li>
+    </ul>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer></footer>

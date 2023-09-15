@@ -1,18 +1,25 @@
-<div class="movie-component">
-  <img src="{{ src }}" class="image" />
+<mat-card>
+  <div class="movie-component">
+    <img src="{{ movie.src }}" class="image" />
 
-  <div class="details-component">
-    <p>
-      <strong>{{ name }}</strong>
-    </p>
+    <div class="details-component">
+      <span class="mv-title-and-rating"
+        ><p>
+          <strong>{{ movie.name }}</strong>
+        </p>
 
-    <p>
-      <strong>{{ rating }}</strong>
-    </p>
+        <p>
+          <strong>{{ movie.rating }}</strong>
+        </p></span
+      >
+
+      <p class="movie-summary">{{ movie.summary }}</p>
+      <br />
+      <app-counter></app-counter><br />
+      <!-- <button (click)="delete()">Delete</button> -->
+      <button mat-fab color="primary" (click)="delete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
   </div>
-
-  <p class="plot">{{ plot }}</p>
-  <br />
-  <app-counter></app-counter><br />
-  <button (click)="delete()">Delete</button>
-</div>
+</mat-card>

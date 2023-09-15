@@ -1,0 +1,64 @@
+<div class="input">
+  <!-- <input
+          matInput
+          type="text"
+          [(ngModel)]="newMovie.src"
+          placeholder="movieimage"
+          required
+        /> -->
+
+  <mat-form-field>
+    <mat-label>MoviePoster</mat-label>
+    <input matInput [(ngModel)]="src" placeholder="movieimage" />
+  </mat-form-field>
+
+  <!-- <input
+          matInput
+          type="text"
+          [(ngModel)]="newMovie.name"
+          placeholder="moviename"
+          required
+        /> -->
+
+  <mat-form-field>
+    <mat-label>MovieName</mat-label>
+    <input matInput [(ngModel)]="name" placeholder="MOvieName" />
+  </mat-form-field>
+
+  <!-- <input
+          matInput
+          type="text"
+          [(ngModel)]="newMovie.rating"
+          placeholder="movierating"
+          required
+        /> -->
+
+  <mat-form-field>
+    <mat-label>MovieRating</mat-label>
+    <input matInput [(ngModel)]="rating" placeholder="movierating" />
+  </mat-form-field>
+
+  <!-- <input
+          matInput
+          type="text"
+          [(ngModel)]="newMovie.plot"
+          placeholder="movieplot"
+          required
+        /> -->
+
+  <mat-form-field>
+    <mat-label>MoviePlot</mat-label>
+    <input matInput [(ngModel)]="summary" placeholder="movieplot" />
+  </mat-form-field>
+
+  <!-- <mat-form-field>
+    <mat-label>Write a summary about movie</mat-label>
+    <textarea matInput placeholder="Write a summary about movie"></textarea>
+  </mat-form-field> -->
+
+  <!-- <button (click)="addMovie()">Add Movie</button><br /> -->
+  <button mat-raised-button (click)="addMovie()" color="primary">
+    {{ "Add Movie" | uppercase }}
+    {{ 249.999 | currency : "INR" }}
+  </button>
+</div>

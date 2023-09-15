@@ -12,10 +12,16 @@
 }
 
 .details-component {
+  display: grid;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.mv-title-and-rating {
   display: flex;
   justify-content: space-between;
 }
-
 .movie-component {
   justify-content: center;
 
