@@ -2,10 +2,12 @@ import { Component, Input } from '@angular/core';
 
 //named import
 type Movie = {
-  src: string;
+  id: string;
+  poster: string;
   name: string;
-  rating: number | '';
+  rating: number;
   summary: string;
+  trailer: string;
 }
 
 @Component({

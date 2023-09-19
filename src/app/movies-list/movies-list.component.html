@@ -65,10 +65,9 @@
 
 <section class="movie-list-container">
   <app-task2
-    *ngFor="let mv of movies; let i = index"
+    *ngFor="let mv of movies"
     [movie]="mv"
-    [idx]="i"
-    (MrmIdx)="delete($event)"
+    (removeMovie)="loadMoviesData()"
   >
   </app-task2>
 </section>

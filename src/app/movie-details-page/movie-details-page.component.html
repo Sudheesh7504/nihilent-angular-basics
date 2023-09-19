@@ -1,7 +1,17 @@
+<!-- <h1>movie id is__ {{ id }}</h1> -->
+
 <mat-card>
   <div class="movie-component">
-    <img src="{{ movie.poster }}" class="image" />
-
+    <!-- <img src="{{ movie.src }}" class="image" /> -->
+    <iframe
+      width="930"
+      height="523"
+      [src]="movie.trailer"
+      title="VIKRAM - Official Trailer | Kamal Haasan | VijaySethupathi, FahadhFaasil | LokeshKanagaraj | Anirudh"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
     <div class="details-component">
       <span class="mv-title-and-rating"
         ><p>
@@ -20,14 +30,6 @@
           </ng-template>
         </button>
 
-        <button (click)="getdetails()" mat-icon-button aria-label="Info">
-          <mat-icon>info</mat-icon>
-        </button>
-
-        <!-- <button mat-icon-button aria-label="Exapand More">
-          <mat-icon>expand_more</mat-icon>
-        </button> -->
-
         <p>
           <strong>⭐{{ movie.rating }}</strong>
         </p></span
@@ -36,24 +38,6 @@
       <p *ngIf="show" class="movie-summary">{{ movie.summary }}</p>
       <br />
       <app-counter></app-counter><br />
-      <!-- <button (click)="delete()">Delete</button> -->
-      <button
-        (click)="deleteMovie()"
-        mat-icon-button
-        color="warn"
-        aria-label="Edit Movie"
-      >
-        <mat-icon>delete</mat-icon>
-      </button>
-
-      <button
-        (click)="editMovie()"
-        mat-icon-button
-        color="accent"
-        aria-label="Edit Movie"
-      >
-        <mat-icon>edit</mat-icon>
-      </button>
     </div>
-  </div></mat-card
->
+  </div>
+</mat-card>

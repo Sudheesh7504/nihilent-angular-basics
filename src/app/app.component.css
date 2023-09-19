@@ -16,3 +16,24 @@
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 } */
+
+.nav-bar {
+  display: flex;
+  background-color: black;
+  color: white;
+  list-style-type: none;
+  padding: 20px;
+  gap: 20px;
+}
+
+span {
+  color: white;
+}
+
+.router-container {
+  padding: 1.5rem;
+}
+
+nav button {
+  text-transform: uppercase;
+}
