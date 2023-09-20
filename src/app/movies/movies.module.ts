@@ -18,6 +18,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CounterComponent } from '../counter/counter.component';
 import { MatBadgeModule } from '@angular/material/badge';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 @NgModule({
@@ -46,7 +50,9 @@ import { MatBadgeModule } from '@angular/material/badge';
     HttpClientModule,
     MatCardModule,
     MatSlideToggleModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDatepickerModule, MatNativeDateModule
+
   ]
 })
 export class MoviesModule { }

@@ -8,6 +8,10 @@ type Movie = {
   rating: number;
   summary: string;
   trailer: string;
+  like: number;
+  dislike: number;
+  releaseDate: string;
+  featured: boolean;
 }
 
 @Component({

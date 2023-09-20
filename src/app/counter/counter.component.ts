@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -6,28 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent {
- like=0; //member variable
-  increment(){//class method
+
+  @Input() like = 0;
+  @Input() dislike = 0;
+  @Output() likeCounter = new EventEmitter<number>()
+  @Output() dislikeCounter = new EventEmitter<number>()
+
+
+  increment() {
     console.log("count")
     this.like++;
-   
+    this.likeCounter.emit(this.like);
+
   }
 
-  dislike=0;
-  Decrement(){
+
+  Decrement() {
     console.log("count")
     this.dislike++;
+    this.dislikeCounter.emit(this.dislike);
   }
 
-  get total(){
-    return this.like+this.dislike;
+  get total() {
+    return this.like + this.dislike;
   }
 
-get msg(){
-  return this.like-this.dislike>=10;
-  
+  get msg() {
+    return this.like - this.dislike >= 10;
 
-}
+
+  }
 
 
 }

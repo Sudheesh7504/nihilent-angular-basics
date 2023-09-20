@@ -1,5 +1,10 @@
 <!-- (submit) will refresh the browser -->
-<form [formGroup]="movieForm" (ngSubmit)="updateMovie()" class="add-movie-form">
+<form
+  [formGroup]="movieForm"
+  (ngSubmit)="updateMovie()"
+  class="edit-movie-form"
+>
+  <marquee><h1>Edit Movie Data</h1></marquee>
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput formControlName="name" placeholder="Ex. Vikram" />
@@ -12,6 +17,8 @@
     </mat-error>
   </mat-form-field>
 
+  <mat-slide-toggle formControlName="featured">Featured</mat-slide-toggle>
+
   <mat-form-field>
     <mat-label>Rating</mat-label>
     <input matInput formControlName="rating" placeholder="Ex. 7" />
@@ -19,6 +26,17 @@
     <mat-error *ngIf="rating?.touched && rating?.hasError('required')">
       Why not fill this field 😉?
     </mat-error>
+
+    <!-- <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput formControlName="releaseDate" [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
 
     <mat-error
       *ngIf="

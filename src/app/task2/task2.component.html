@@ -2,6 +2,8 @@
   <div class="movie-component">
     <img src="{{ movie.poster }}" class="image" />
 
+    <p *ngIf="movie.featured" class="movie-badge">Featured</p>
+
     <div class="details-component">
       <span class="mv-title-and-rating"
         ><p>
@@ -24,19 +26,23 @@
           <mat-icon>info</mat-icon>
         </button>
 
-        <!-- <button mat-icon-button aria-label="Exapand More">
-          <mat-icon>expand_more</mat-icon>
-        </button> -->
-
         <p>
           <strong>⭐{{ movie.rating }}</strong>
         </p></span
       >
+      <b
+        ><em>{{ movie.releaseDate | date : "MMM YYY" }} </em></b
+      >
 
       <p *ngIf="show" class="movie-summary">{{ movie.summary }}</p>
       <br />
-      <app-counter></app-counter><br />
-      <!-- <button (click)="delete()">Delete</button> -->
+      <app-counter
+        [like]="movie.like"
+        [dislike]="movie.dislike"
+        (likeCounter)="updateLikes($event)"
+        (dislikeCounter)="updateDislikes($event)"
+      ></app-counter
+      ><br />
 
       <div class="btn">
         <button

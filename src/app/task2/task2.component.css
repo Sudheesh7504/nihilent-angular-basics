@@ -4,13 +4,26 @@
   min-height: 100vh;
 }
 
+/* .image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+} */
+
 .image {
   width: 100%;
   height: 450px;
   object-fit: cover;
   border-radius: 20px;
+  transition: transform 0.3s ease-in-out; /* Apply a smooth transition effect */
 }
 
+/* Hover state for the movie poster */
+.image:hover {
+  transform: scale(1.1) perspective(500px); /* Adjust the scale and rotation as needed */
+  cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+}
 .details-component {
   display: grid;
   justify-content: space-between;
@@ -22,11 +35,26 @@
   display: flex;
   justify-content: space-between;
 }
-.movie-component {
-  justify-content: center;
 
-  width: 20rem;
-  overflow: hidden;
+.movie-component {
+  width: 400px;
+  border-radius: 16px;
+  justify-content: space-evenly;
+  /* overflow: hidden; */
+  position: relative;
+  gap: 100px;
+}
+
+.movie-badge {
+  background: goldenrod;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  transform: translateX(50%);
+  font-weight: 500;
 }
 
 .plot {

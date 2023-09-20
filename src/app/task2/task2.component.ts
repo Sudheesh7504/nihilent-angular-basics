@@ -10,19 +10,27 @@ import { MovieService } from '../movie.service';
 })
 export class Task2Component {
 
+
+
   @Input() movie: Movie = {
     id: '',
     poster: '',
     name: "vikram",
     rating: 0,
     summary: "fcgjjgg",
-    trailer: ''
+    trailer: '',
+    like: 0,
+    dislike: 0,
+    releaseDate: '',
+    featured: false,
 
   };
 
   @Input() idx: number = 0;
   // @Output() MrmIdx = new EventEmitter<number>();
   @Output() removeMovie = new EventEmitter();
+
+
 
   constructor(private router: Router, private movieService: MovieService) { }
 
@@ -33,6 +41,24 @@ export class Task2Component {
       this.removeMovie.emit();
     });
     // go refresh -> Parent
+  }
+
+  updateLikes(likeCount: number) {
+    this.movie = { ...this.movie, like: likeCount }
+    console.log(likeCount);
+    this.movieService.updateMovie(this.movie, this.movie.id).subscribe(() => {
+
+    });
+
+  }
+
+  updateDislikes(dislikeCount: number) {
+    this.movie = { ...this.movie, dislike: dislikeCount }
+    console.log(dislikeCount);
+    this.movieService.updateMovie(this.movie, this.movie.id).subscribe(() => {
+
+    });
+
   }
 
   editMovie() {

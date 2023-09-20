@@ -12,7 +12,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AddMovieFormComponent {
   movieForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
+    featured: [false],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
+    releaseDate: ['', [Validators.required]],
     poster: [
       '',
       [
@@ -30,9 +32,11 @@ export class AddMovieFormComponent {
         Validators.pattern('^http.*'),
       ],
     ],
+
   });
 
   movieList;
+
   // DI - Dependency Injection
   constructor(
     private movieService: MovieService,
@@ -61,6 +65,10 @@ export class AddMovieFormComponent {
   get trailer() {
     return this.movieForm?.get('trailer');
   }
+
+
+
+
 
   addMovie() {
     console.log(this.movieForm.status);
