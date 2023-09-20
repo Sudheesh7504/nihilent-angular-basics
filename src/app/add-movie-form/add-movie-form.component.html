@@ -1,5 +1,8 @@
 <!-- (submit) will refresh the browser -->
+
 <form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="add-movie-form">
+  <marquee><h1>Add Movie Form</h1></marquee>
+  <mat-slide-toggle>Featured</mat-slide-toggle>
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput formControlName="name" placeholder="Ex. Vikram" />

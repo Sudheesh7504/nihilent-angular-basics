@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, MatBadgeModule,
-    MatCardModule, ReactiveFormsModule, HttpClientModule, MatToolbarModule
+    MatCardModule, ReactiveFormsModule, HttpClientModule, MatToolbarModule, MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

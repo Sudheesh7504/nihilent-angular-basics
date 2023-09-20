@@ -32,3 +32,9 @@
 .plot {
   color: rgb(153 142 142);
 }
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-110%);
+}
