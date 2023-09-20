@@ -6,30 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent {
-[x: string]: any;
+  [x: string]: any;
 
-clr="red";
+  clr = "red";
 
 
 
-// updateColor(event: any){
-//   this.clr=event.target.value;
-//   console.log(event.target.value);
-//   console.log("typing")
-// }
+  // updateColor(event: any){
+  //   this.clr=event.target.value;
+  //   console.log(event.target.value);
+  //   console.log("typing")
+  // }
 
-colorList=['orange','blue','green','yellow'];
+  colorList = ['orange', 'blue', 'green', 'yellow'];
 
-addColor(){
- 
-   this.colorList.push(this.clr);
+  addColor() {
 
-}
+    this.colorList.push(this.clr);
 
-delete(idx:number){
-  this.colorList.splice(idx,1);
-  
-}
+  }
+
+  delete(idx: any) {
+    this.colorList.splice(idx, 1);
+
+  }
 
 
 }
