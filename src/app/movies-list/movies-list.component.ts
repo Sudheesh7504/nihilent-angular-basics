@@ -1,7 +1,15 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { Movie } from '../app.component';
-import { Subscription } from 'rxjs';
+
+import { FormBuilder } from '@angular/forms';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  Observable,
+  Subscription,
+  switchMap,
+} from 'rxjs';
 
 @Component({
   selector: 'app-movies-list',
@@ -13,7 +21,13 @@ export class MoviesListComponent {
   // @Input() movies: Movie[] = [];
 
 
+  searchForm = this.fb.group({
+    search: '',
+  });
 
+  get search() {
+    return this.searchForm.get('search');
+  }
 
   delete(idx: number) {
     this.movies.splice(idx, 1);
@@ -22,7 +36,7 @@ export class MoviesListComponent {
 
   movies: Array<Movie> = [];
   getMovieList: Subscription | any;
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService, private fb: FormBuilder) { }
 
   // Life cycle Methods
   // Constructor vs ngOnInit
@@ -31,6 +45,15 @@ export class MoviesListComponent {
   // 3. Easy testing
   // 4. Organizing
   ngOnInit() {
+    this.search?.valueChanges
+      .pipe(
+        debounceTime(1500),
+        distinctUntilChanged(),
+        switchMap((name) => this.movieService.searchMovieList(name || ''))
+      )
+      .subscribe((mvList) => {
+        this.movies = mvList;
+      });
     this.loadMoviesData();
   }
 

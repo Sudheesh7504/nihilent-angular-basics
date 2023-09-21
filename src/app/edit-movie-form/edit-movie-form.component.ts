@@ -38,6 +38,7 @@ export class EditMovieFormComponent {
       ],
     ],
     summary: ['', [Validators.required, Validators.minLength(20)]],
+    featured: false,
     trailer: [
       '',
       [

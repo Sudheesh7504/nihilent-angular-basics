@@ -15,6 +15,8 @@ export class AddMovieFormComponent {
     featured: [false],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
     releaseDate: ['', [Validators.required]],
+    like: [0],
+    dislike: [0],
     poster: [
       '',
       [

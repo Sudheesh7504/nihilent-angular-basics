@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Movie } from '../app.component'
 import { Router } from '@angular/router';
 import { MovieService } from '../movie.service';
+import { debounceTime, Subject, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-task2',
@@ -29,10 +30,25 @@ export class Task2Component {
   @Input() idx: number = 0;
   // @Output() MrmIdx = new EventEmitter<number>();
   @Output() removeMovie = new EventEmitter();
+  likeSubject = new Subject<number>();
+  disLikeSubject = new Subject<number>();
 
 
 
-  constructor(private router: Router, private movieService: MovieService) { }
+  constructor(private router: Router, private movieService: MovieService) {
+    this.likeSubject.pipe(debounceTime(2000),
+      switchMap((likeCount) => {
+        this.movie = { ...this.movie, like: likeCount }
+        return this.movieService.updateMovie(this.movie, this.movie.id);
+      })).subscribe();
+
+    this.disLikeSubject.pipe(debounceTime(2000),
+      switchMap((dislikeCount) => {
+        this.movie = { ...this.movie, dislike: dislikeCount }
+        return this.movieService.updateMovie(this.movie, this.movie.id);
+      })).subscribe();
+
+  }
 
 
   deleteMovie() {
@@ -44,20 +60,13 @@ export class Task2Component {
   }
 
   updateLikes(likeCount: number) {
-    this.movie = { ...this.movie, like: likeCount }
-    console.log(likeCount);
-    this.movieService.updateMovie(this.movie, this.movie.id).subscribe(() => {
 
-    });
+    this.likeSubject.next(likeCount);
 
   }
 
   updateDislikes(dislikeCount: number) {
-    this.movie = { ...this.movie, dislike: dislikeCount }
-    console.log(dislikeCount);
-    this.movieService.updateMovie(this.movie, this.movie.id).subscribe(() => {
-
-    });
+    this.disLikeSubject.next(dislikeCount);
 
   }
 
