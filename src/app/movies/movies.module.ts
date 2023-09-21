@@ -19,8 +19,15 @@ import { CounterComponent } from '../counter/counter.component';
 import { MatBadgeModule } from '@angular/material/badge';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import {
+  MatChipEditedEvent,
+  MatChipInputEvent,
+  MatChipsModule,
+} from '@angular/material/chips';
 
 
 
@@ -51,7 +58,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatCardModule,
     MatSlideToggleModule,
     MatBadgeModule,
-    MatDatepickerModule, MatNativeDateModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatListModule,
+    MatChipsModule,
 
   ]
 })

@@ -1,4 +1,3 @@
-<!-- (submit) will refresh the browser -->
 <form
   [formGroup]="movieForm"
   (ngSubmit)="updateMovie()"
@@ -45,6 +44,62 @@
     >
       Rating must be 0 to 10
     </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Choose a releaseDate</mat-label>
+    <input matInput formControlName="releaseDate" [matDatepicker]="picker" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <h3>Censor Rating</h3>
+  <mat-radio-group
+    formControlName="censorRating"
+    aria-label="Select an Censor rating"
+  >
+    <mat-radio-button value="U"> U </mat-radio-button>
+    <mat-radio-button value="U/A"> U/A </mat-radio-button>
+    <mat-radio-button value="A"> A </mat-radio-button>
+    <mat-radio-button value="R"> R </mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field>
+    <mat-label>Genres</mat-label>
+    <mat-select formControlName="genres" multiple>
+      <mat-option *ngFor="let genre of genres" [value]="genre.value">{{
+        genre.label
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Languages</mat-label>
+    <mat-select formControlName="languages" multiple>
+      <mat-option *ngFor="let language of languages" [value]="language.value">{{
+        language.label
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-chip-list">
+    <mat-chip-grid #chipList>
+      <mat-chip-row
+        *ngFor="let name of cast.controls; let i = index"
+        (removed)="removeCastName(i)"
+      >
+        {{ name.value }}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip-row>
+      <input
+        placeholder="New cast name..."
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="true"
+        (matChipInputTokenEnd)="editCastName($event)"
+      />
+    </mat-chip-grid>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Poster</mat-label>
