@@ -4,6 +4,7 @@ import { MovieService } from '../movie.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Movie } from '../app.component';
 import { Subscription } from 'rxjs';
+import { LANGUAGES, GENRES } from './global';
 
 @Component({
   selector: 'app-movie-details-page',
@@ -44,6 +45,18 @@ export class MovieDetailsPageComponent {
   show = true;
   toggleSummary() {
     this.show = !this.show;
+  }
+
+  getLabelLanguages(movie: any) {
+    return movie.languages?.map(
+      (lang: string) => LANGUAGES.find((data) => data.value === lang)?.label
+    );
+  }
+
+  getLabelGenres(movie: any) {
+    return movie.genres?.map(
+      (lang: string) => GENRES.find((data) => data.value === lang)?.label
+    );
   }
 
 }

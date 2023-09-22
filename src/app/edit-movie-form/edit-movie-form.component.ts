@@ -95,8 +95,8 @@ export class EditMovieFormComponent {
       console.log(mv);
       this.movieForm.patchValue(mv);
 
-      mv.cast.forEach((actor: string) => {
-        this.cast.push(this.fb.control(actor));
+      mv.cast.forEach((name: string) => {
+        this.cast.push(this.fb.control(name));
 
 
       });

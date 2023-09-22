@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { LANGUAGES, GENRES } from '../movie-details-page/global';
 
 
 
@@ -15,38 +16,9 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 })
 export class AddMovieFormComponent {
 
-  GENRES: any = [
-    { label: 'Action', value: 'ACTION' },
-    { label: 'Adventure', value: 'ADVENTURE' },
-    { label: 'Animation', value: 'ANIMATION' },
-    { label: 'Comedy', value: 'COMEDY' },
-    { label: 'Crime', value: 'CRIME' },
-    { label: 'Drama', value: 'DRAMA' },
-    { label: 'Fantasy', value: 'FANTASY' },
-    { label: 'Historical', value: 'HISTORICAL' },
-    { label: 'Horror', value: 'HORROR' },
-    { label: 'Musical', value: 'MUSICAL' },
-    { label: 'Mystery', value: 'MYSTERY' },
-    { label: 'Romance', value: 'ROMANCE' },
-    { label: 'Science Fiction', value: 'SCI_FI' },
-    { label: 'Thriller', value: 'THRILLER' },
-    { label: 'War', value: 'WAR' },
-    { label: 'Western', value: 'WESTERN' },
-  ];
 
-  LANGUAGES: any = [
-    { label: 'English', value: 'EN' },
-    { label: 'Hindi', value: 'HI' },
-    { label: 'Bengali', value: 'BN' },
-    { label: 'Telugu', value: 'TE' },
-    { label: 'Marathi', value: 'MR' },
-    { label: 'Kannada', value: 'KN' },
-    { label: 'Gujarati', value: 'GU' },
-    { label: 'Malayalam', value: 'ML' },
-    { label: 'Tamil', value: 'TA' },
-  ];
-  genres = this.GENRES;
-  languages = this.LANGUAGES;
+  genres = GENRES;
+  languages = LANGUAGES;
   separatorKeysCodes: number[] = [ENTER, COMMA];
 
   movieForm = this.fb.group({
