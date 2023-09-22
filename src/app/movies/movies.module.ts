@@ -29,6 +29,8 @@ import {
   MatChipsModule,
 } from '@angular/material/chips';
 
+import { NgxStarRatingModule } from 'ngx-star-rating';
+
 
 
 @NgModule({
@@ -64,6 +66,7 @@ import {
     MatSelectModule,
     MatListModule,
     MatChipsModule,
+    NgxStarRatingModule
 
   ]
 })

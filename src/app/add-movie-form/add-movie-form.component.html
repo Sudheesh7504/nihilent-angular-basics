@@ -1,5 +1,8 @@
 <!-- (submit) will refresh the browser -->
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 <form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="add-movie-form">
   <marquee><h1>Add Movie Form</h1></marquee>
   <mat-slide-toggle>Featured</mat-slide-toggle>
@@ -15,7 +18,7 @@
     </mat-error>
   </mat-form-field>
 
-  <mat-form-field>
+  <!-- <mat-form-field>
     <mat-label>Rating</mat-label>
     <input matInput formControlName="rating" placeholder="Ex. 7" />
     <mat-error *ngIf="rating?.touched && rating?.hasError('required')">
@@ -24,7 +27,7 @@
     <mat-error *ngIf="rating?.touched && rating?.hasError('min')">
       Please provide minimum rating
     </mat-error>
-  </mat-form-field>
+  </mat-form-field> -->
 
   <mat-form-field>
     <mat-label>Choose a releaseDate</mat-label>
@@ -120,6 +123,7 @@
       Please provide a url with http pattern
     </mat-error>
   </mat-form-field>
+  <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
 
   <button
     [disabled]="movieForm.invalid"
@@ -136,6 +140,6 @@
   </button>
 </form>
 
-<!-- <pre>
+<pre>
   {{ movieForm.value | json }}
-</pre> -->
+</pre>

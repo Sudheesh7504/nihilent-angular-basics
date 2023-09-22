@@ -9,6 +9,7 @@ import { LANGUAGES, GENRES } from '../movie-details-page/global';
 
 
 
+
 @Component({
   selector: 'app-add-movie-form',
   templateUrl: './add-movie-form.component.html',
@@ -32,6 +33,7 @@ export class AddMovieFormComponent {
     genres: [[], [Validators.required]],
     languages: [[], [Validators.required]],
     cast: this.fb.array([]),
+
     poster: [
       '',
       [
