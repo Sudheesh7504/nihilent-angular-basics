@@ -80,7 +80,6 @@ export class EditMovieFormComponent {
 
   });
 
-
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
@@ -95,7 +94,14 @@ export class EditMovieFormComponent {
     this.movieService.getMovieById(this.id).subscribe((mv: any) => {
       console.log(mv);
       this.movieForm.patchValue(mv);
+
+      mv.cast.forEach((actor: string) => {
+        this.cast.push(this.fb.control(actor));
+
+
+      });
     });
+
   }
 
   get name() {
@@ -122,7 +128,8 @@ export class EditMovieFormComponent {
     return this.movieForm.get('cast') as FormArray;
   }
 
-  editCastName(event: MatChipInputEvent) {
+
+  addCastName(event: MatChipInputEvent) {
     const name = (event.value || '').trim();
     if (name) {
       this.cast.push(this.fb.control(name));
